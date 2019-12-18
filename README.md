@@ -1,2 +1,2 @@
 # TriangleWord
-TriangleWord
+Ryan's Homework - TriangleWord

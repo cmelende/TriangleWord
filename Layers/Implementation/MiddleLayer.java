@@ -37,4 +37,3 @@ public class MiddleLayer implements ILayer {
         System.out.println(val);
     }
 }
-
