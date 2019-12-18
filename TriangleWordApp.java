@@ -17,13 +17,15 @@ public class TriangleWordApp {
         while (!quitProgram) {
             Output.println("Please enter the word you want to make into a triangle or press 'Q' to exit");
             final String userInput = Input.nextLine();
-            quitProgram = userInput == exitKey;
+            quitProgram = userInput.equals(exitKey);
 
             Output.println("--------------------------------------");
             if (!quitProgram)
                 Run(userInput, Output);
             Output.println("--------------------------------------");
         }
+
+        Output.println("Goodbye");
     }
 
     private static void Run(final String userInput, final PrintStream stream) {
