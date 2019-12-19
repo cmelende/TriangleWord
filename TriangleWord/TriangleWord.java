@@ -11,22 +11,22 @@ public class TriangleWord {
     private BottomLayer bottomLayer;
     private String word;
 
-    public TriangleWord(String pValue) throws Exception {
-        if(pValue.isEmpty() || pValue == null || !(pValue.length() > 3)) {
+    public TriangleWord(String pWord) throws Exception {
+        if(pWord.isEmpty() || pWord == null || !(pWord.length() > 3)) {
             throw new Exception("Word must be three characters long");
         }
-        word = pValue;
-        topLayer = new TopLayer(CalculateSpacePaddCount(0), pValue.charAt(0));
+        word = pWord;
+        topLayer = new TopLayer(CalculateSpacePaddCount(0), pWord.charAt(0));
         middleLayers = CreateMiddleLayers();
-        bottomLayer = new BottomLayer(pValue);
+        bottomLayer = new BottomLayer(pWord);
     }
 
-    private int CalculateSpacePaddCount(int rowNumber) {
-        return GetHeight() - rowNumber - 1;
+    private int CalculateSpacePaddCount(int pRowNumber) {
+        return GetHeight() - pRowNumber - 1;
     }
 
-    private int CalculateCentralSpaceCount(int rowNumber) {
-        return GetBaseLength() - 2 - (CalculateSpacePaddCount(rowNumber)*2);
+    private int CalculateCentralSpaceCount(int pRowNumber) {
+        return GetBaseLength() - 2 - (CalculateSpacePaddCount(pRowNumber)*2);
     }
 
     private int GetHeight() { 

@@ -20,12 +20,13 @@ public class MiddleLayer implements ILayer {
         value += String.valueOf(Character);
         value += GetSpacesPadd(CentralSpaceCount);
         value += String.valueOf(Character);
+        
         return value;
     }
 
-    private static String GetSpacesPadd(int numberOfSpaces) {
+    private static String GetSpacesPadd(int pNumberOfSpaces) {
         String val = "";
-        for(int i = 0; i < numberOfSpaces; i++) {
+        for(int i = 0; i < pNumberOfSpaces; i++) {
             val += " ";
         }
 

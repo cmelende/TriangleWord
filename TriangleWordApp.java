@@ -10,19 +10,19 @@ public class TriangleWordApp {
         boolean quitProgram = false;
         final String exitKey = "Q";
 
-        Output.println("--------------------------------------");
+        Output.println("----------------------------------------------------------------------------");
         Output.println("Welcome to my Triangle Word app!");
-        Output.println("--------------------------------------");
+        Output.println("----------------------------------------------------------------------------");
 
         while (!quitProgram) {
             Output.println("Please enter the word you want to make into a triangle or press 'Q' to exit");
             final String userInput = Input.nextLine();
             quitProgram = userInput.equals(exitKey);
 
-            Output.println("--------------------------------------");
+            Output.println("----------------------------------------------------------------------------");
             if (!quitProgram)
                 Run(userInput, Output);
-            Output.println("--------------------------------------");
+            Output.println("----------------------------------------------------------------------------");
         }
 
         Output.println("Goodbye");
