@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import Layers.Implementation.BottomLayer;
 import Layers.Implementation.MiddleLayer;
 import Layers.Implementation.TopLayer;
+import Layers.Interface.ILayer;
 
 public class TriangleWord {
-    private TopLayer topLayer;
-    private ArrayList<MiddleLayer> middleLayers;
-    private BottomLayer bottomLayer;
+    private ILayer topLayer;
+    private ArrayList<ILayer> middleLayers;
+    private ILayer bottomLayer;
     private String word;
 
     public TriangleWord(String pWord) throws Exception {
@@ -37,8 +38,8 @@ public class TriangleWord {
         return (word.length()*2)- 1;
     }
 
-    private ArrayList<MiddleLayer> CreateMiddleLayers() {
-        ArrayList<MiddleLayer> layers = new ArrayList<MiddleLayer>();
+    private ArrayList<ILayer> CreateMiddleLayers() {
+        ArrayList<ILayer> layers = new ArrayList<ILayer>();
         for(int i = 1; i < word.length() - 1; i++) {
             int numberOfBegginingSpaces = CalculateSpacePaddCount(i);
             int numberOFMiddleSpaces = CalculateCentralSpaceCount(i);
@@ -53,7 +54,7 @@ public class TriangleWord {
     public void Output() {
         topLayer.Output();
 
-        for (MiddleLayer middleLayer : middleLayers) {
+        for (ILayer middleLayer : middleLayers) {
             middleLayer.Output();
         }
         
