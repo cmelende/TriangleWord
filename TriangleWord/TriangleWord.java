@@ -1,6 +1,9 @@
 package TriangleWord;
 
 import java.util.ArrayList;
+import java.util.Formatter;
+
+import Formatter.Interface.IShapeFormatter;
 import Layers.Implementation.BottomLayer;
 import Layers.Implementation.MiddleLayer;
 import Layers.Implementation.TopLayer;
@@ -11,9 +14,10 @@ public class TriangleWord {
     private ArrayList<ILayer> middleLayers;
     private ILayer bottomLayer;
     private String word;
+    private IShapeFormatter formatter;
 
     public TriangleWord(String pWord) throws Exception {
-        if(pWord.isEmpty() || pWord == null || !(pWord.length() > 3)) {
+        if(pWord.isEmpty() || pWord == null || !(pWord.length() > 2)) {
             throw new Exception("Word must be three characters long");
         }
         word = pWord;
@@ -52,12 +56,25 @@ public class TriangleWord {
     }
 
     public void Output() {
-        topLayer.Output();
+        String val = this.AsString();
+        if(!(formatter == null)) val = formatter.Format(val);
+
+        System.out.println(val);
+    }
+
+    public String AsString() {
+        String val = "";
+        val += topLayer.AsString();
 
         for (ILayer middleLayer : middleLayers) {
-            middleLayer.Output();
+            val += middleLayer.AsString();
         }
         
-        bottomLayer.Output();
+        val += bottomLayer.AsString();
+        return val;
+    }
+
+    public void SetFormatter(IShapeFormatter pFormatter) {
+        formatter = pFormatter;
     }
 }

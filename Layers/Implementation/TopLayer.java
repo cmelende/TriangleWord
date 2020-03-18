@@ -12,11 +12,11 @@ public class TopLayer implements ILayer {
     }
 
     public void Output() {
-        String value = this.ToString();
+        String value = this.AsString();
         System.out.println(value);
     }
 
-    public String ToString() {
+    public String AsString() {
         String value = "";
         for(int i = 0; i < SpacePaddCount; i++) {
             value += " ";

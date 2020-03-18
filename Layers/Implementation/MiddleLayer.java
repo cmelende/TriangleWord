@@ -13,7 +13,7 @@ public class MiddleLayer implements ILayer {
         Character = pCharacter;
     }
 
-    public String ToString() {
+    public String AsString() {
         String value = "";
 
         value += GetSpacesPadd(SpacePaddCount);
@@ -34,7 +34,7 @@ public class MiddleLayer implements ILayer {
     }
 
     public void Output() {
-        String val = this.ToString();
+        String val = this.AsString();
         System.out.println(val);
     }
 }
